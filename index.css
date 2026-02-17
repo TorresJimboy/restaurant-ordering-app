@@ -1,22 +1,33 @@
 body {
-    margin: 0 auto 0 auto;
-    width: 600px;
-    height: auto;
-    display: flex;
-    font-family: Smythe;
+    margin: 0;
 } 
 
-header {
-    margin-top: 0;
+.container {
+    margin: 0 auto 0 auto;
+    width: 600px;
+    height: 1000px;
+    font-family: Smythe;
+    border: 5px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.title-top {
+    margin: 0;
+    padding: 0;
     background-image: url("images/bg-burger.jpg");
     background-size: cover;
-    background-position: center;
-    width: 100%;
+    background-position: 50% 65%;
     height: 167px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    gap: 10px;
 }
 
 h1 {
-    margin: 56px 0 0 46px;
+    margin: 0;
     color: #ffffff;
     font-weight: 400;
     font-size: 29px;
@@ -24,28 +35,60 @@ h1 {
 }
 
 .title-desc {
-    margin: 10px 0 0 46px;
+    margin: 0;
     color: #ffffff;
     font-weight: 400;
+    font-size: 18px;
+}
+
+.menu {
+    margin: 0 50px 0 50px;
+}
+.items{
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    margin: 0;
+    padding: 50px 0 50px 0;
+}
+
+.items-inner{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+}
+
+.item-emoji {
+    font-size: 70px;
+    margin: 0 20px 0 0;
+}
+
+.item-name {
+    margin: 0 0 5px 0;
     font-size: 20px;
 }
 
-.items{
-    border-top: 1px solid lightgray;
-    padding: 20px 0 0 0;
-    width: 100%;
-    margin: 15px 0;
+.item-ingredients {
+    margin: 0;
+    font-weight: 400;
+    color: #8B8B8B;
 }
 
-/* .items-inner{
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+.item-price {
+    margin: 5px 0 0 0;
 }
 
-.items-details{
-    display: flex;
-    font-size: 13px;
-    justify-content: space-between;
-    width: 160px;
-} */
+.item-add {
+    width: 40px;
+    height: 40px;
+    color: #3C3C3C;
+    border: 1px solid #DEDEDE;
+    border-radius: 50%;
+    background-color: transparent;
+    margin-right: 0;
+    margin-left: auto;
+}
+

@@ -1,20 +1,19 @@
-import { menuArray } from '/data.js'
-
-const {name, ingredients, id, price, emoji} = menu
+import { menuArray } from './data.js'
 
 function getMenuItems(){
     let menuItems = ''
 
-    menu.forEach(function(menu){
+    menuArray.forEach(function(menu){
         menuItems += `
         <div class="items">
             <div class="items-inner">
-                <img src="${menu.emoji}" class="item-emoji">
+                <p class="item-emoji">${menu.emoji}</p>
                 <div>
                     <p class="item-name">${menu.name}</p>
                     <p class="item-ingredients">${menu.ingredients}</p>
                     <p class="item-price">$${menu.price}</p>
-                </div>            
+                </div>
+                <button class="item-add">+</button>           
             </div>
         </div>
         `
@@ -25,6 +24,5 @@ function getMenuItems(){
 function render(){
     document.getElementById('menu').innerHTML = getMenuItems()
 }
-render()
 
-console.log("i love my mom")
+render()
