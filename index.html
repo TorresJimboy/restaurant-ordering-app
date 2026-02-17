@@ -1,16 +1,40 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <title>Jim's Ordering App</title>
        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <div class="container">
-            <header class="title-top">
+            <header class="title-top" role="img" aria-label="a juicy burger background">
                 <h1>Jim's Diner</h1>
                 <p class="title-desc">The best burger and pizzas in town</p>
             </header>
             <main>
-                <div class="menu" id="menu"></div>
-                <!-- Items Here -->
+                <section>
+                    <div class="menu" id="menu"></div>
+                    <!-- Items Here -->
+                </section>
+                <section>
+                    <div class="cart" id="cart">
+                    <!-- Selected Items Here -->
+                        <div class="orders">
+                            <div class="orders-inner">
+                                <h3 class="order-title">Your Order</h3>
+                                <div class="order-items">
+                                    <p class="order-name">Pizza</p>
+                                    <button class="order-remove-btn">remove</button>
+                                    <p class="order-price">$14</p>
+                                </div>
+                                <div class="total-container">
+                                    <p class="total-text">Total Price:</p>
+                                    <p class="total-amount">$14</p>
+                                </div>
+                                <button class="complete-order-btn" type="submit">Complete order</button>           
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
         </div>
 	<script src="index.js" type="module"></script>
