@@ -19,7 +19,7 @@ h1 {
     margin: 56px 0 0 46px;
     color: #ffffff;
     font-weight: 400;
-    font-size: 39px;
+    font-size: 29px;
     line-height: 24px;
 }
 
@@ -27,6 +27,25 @@ h1 {
     margin: 10px 0 0 46px;
     color: #ffffff;
     font-weight: 400;
-    font-size: 22.42px;
+    font-size: 20px;
 }
 
+.items{
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0;
+    width: 100%;
+    margin: 15px 0;
+}
+
+/* .items-inner{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.items-details{
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    width: 160px;
+} */
