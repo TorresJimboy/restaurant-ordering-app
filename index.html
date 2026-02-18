@@ -16,23 +16,20 @@
                     <!-- Items Here -->
                 </section>
                 <section>
-                    <div class="cart" id="cart">
-                    <!-- Selected Items Here -->
-                        <div class="orders">
-                            <div class="orders-inner">
-                                <h3 class="order-title">Your Order</h3>
-                                <div class="order-items">
-                                    <p class="order-name">Pizza</p>
-                                    <button class="order-remove-btn">remove</button>
-                                    <p class="order-price">$14</p>
-                                </div>
-                                <div class="total-container">
-                                    <p class="total-text">Total Price:</p>
-                                    <p class="total-amount">$14</p>
-                                </div>
-                                <button class="complete-order-btn" type="submit">Complete order</button>           
+                    <div class="cart" id="cart" hidden>
+                    <div class="orders" id="orders">
+                        <div class="orders-inner">
+                            <h3 class="order-title">Your Order</h3>
+                            <div class="orders-container" id="orders-container">
+                            <!-- Selected Items Here -->
                             </div>
+                            <div class="total-container">
+                                <p class="total-text">Total Price:</p>
+                                <p class="total-amount" id="total-amount"></p>
+                            </div>
+                            <button class="complete-order-btn" type="submit">Complete order</button>    
                         </div>
+                    </div>
                     </div>
                 </section>
             </main>

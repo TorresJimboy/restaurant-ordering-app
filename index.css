@@ -6,7 +6,6 @@ body {
 .container {
     margin: 0 auto 0 auto;
     width: 600px;
-    height: 1000px;
     font-family: Smythe;
     border: 5px solid black;
     border-radius: 20px;
@@ -111,17 +110,25 @@ h1 {
     flex-direction: column;
 }
 
-
 .order-title {
     margin: 0;
     text-align: center;
 }
 
+.orders-container {
+    margin: 0;
+}
+
 .order-items {
-    margin-top: 20px;
-    border-bottom: 2px solid #393333;
+    margin: 0;
     display: flex;
     flex-direction: row;
+}
+
+.item-count {
+    margin-right: 7px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .order-name {
@@ -151,7 +158,8 @@ h1 {
 }
 
 .total-container {
-    margin-top: 10px;
+    margin: 0;
+    border-top: 2px solid #393333;
     display: flex;
 }
 
@@ -167,6 +175,7 @@ h1 {
 }
 
 .complete-order-btn {
+    margin-bottom: 20px;
     padding: 15px;
     background-color: #16DB99;
     border: none;
