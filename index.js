@@ -89,12 +89,31 @@ function renderOrders(){
 // Remove Items
 
 function handleRemoveClick(itemId){
-    const targetItemObj = menuArray.find(item =>
+
+    const existingItem = ordersArray.find(item =>
         item.id === Number(itemId)
     )
-    ordersArray.pop(targetItemObj)
+
+    if (existingItem){
+
+        if (existingItem.quantity > 1){
+            existingItem.quantity -= 1 
+        } else {
+            ordersArray = ordersArray.filter(item =>
+                item.id !== Number(itemId)
+            )
+        }
+
+    }
+
+    if (ordersArray.length === 0){
+        cart.hidden = true
+    }
+
     renderOrders()
+    renderTotal()
 }
+
 
 // Render Total Amount
 
@@ -102,7 +121,47 @@ function renderTotal(){
     const total = ordersArray.reduce((sum, item) => sum + item.price * item.quantity, 0)
     
     document.getElementById("total-amount").textContent = `$${total}`
+    
+    return total
 }
+
+// Handle complete order button
+
+document.getElementById("complete-order-btn").addEventListener("click", function(){
+
+    const totalOrder = renderTotal()
+
+    document.getElementById('overlay').style.display = 'block'
+    document.getElementById('modal').style.display = 'flex'
+
+    console.log(totalOrder)
+})
+
+// Form Section
+
+// Card Number Inputfield
+const cardInput = document.getElementById('form-card-number');
+
+cardInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    value = value.match(/.{1,4}/g)?.join(' ') || '';
+    
+    e.target.value = value;
+});
+
+// CVV Inputfield
+
+const cvvInput = document.getElementById('form-cvv');
+cvvInput.addEventListener('input', () => {
+    cvvInput.value = cvvInput.value.replace(/\D/g, '');
+});
+
+
+
+
+
+
 
 
 

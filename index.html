@@ -27,12 +27,22 @@
                                 <p class="total-text">Total Price:</p>
                                 <p class="total-amount" id="total-amount"></p>
                             </div>
-                            <button class="complete-order-btn" type="submit">Complete order</button>    
+                            <button class="complete-order-btn" id="complete-order-btn" type="submit">Complete order</button>    
                         </div>
                     </div>
                     </div>
                 </section>
             </main>
+            <div class="overlay" id="overlay"></div>
+            <div class="modal" id="modal">
+                <form>
+                    <h3 class="form-title">Enter card details</h3>
+                    <input type="text" id="form-name" name="name" placeholder="Full Name" required/>
+                    <input type="text" id="form-card-number" name="card-number" placeholder="Card Number" maxlength="19" inputmode="numeric" required/>
+                    <input type="text" id="form-cvv" name="cvv" placeholder="CVV" maxlength="3" required/>
+                    <button type="submit">Pay</button>
+                </form>
+            </div>
         </div>
 	<script src="index.js" type="module"></script>
     </body>
