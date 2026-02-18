@@ -60,8 +60,8 @@ function handleAddClick(itemId){
             ...targetItemObj, 
             quantity: 1
         })
+        
     }
-    
     renderOrders()
     renderTotal()
 }
@@ -128,13 +128,9 @@ function renderTotal(){
 // Handle complete order button
 
 document.getElementById("complete-order-btn").addEventListener("click", function(){
-
-    const totalOrder = renderTotal()
-
+    
     document.getElementById('overlay').style.display = 'block'
     document.getElementById('modal').style.display = 'flex'
-
-    console.log(totalOrder)
 })
 
 // Form Section
@@ -156,6 +152,50 @@ const cvvInput = document.getElementById('form-cvv');
 cvvInput.addEventListener('input', () => {
     cvvInput.value = cvvInput.value.replace(/\D/g, '');
 });
+
+// Close Modal
+window.addEventListener('click', (event) => {
+  if (event.target === overlay) {
+    modal.style.display = 'none'
+    overlay.style.display = 'none'
+  }
+});
+
+// Pay Button
+const payForm = document.getElementById('payment-form')
+
+payForm.addEventListener('submit', function(e){
+    e.preventDefault()
+    const payFormData = new FormData(payForm)
+    
+    const name = payFormData.get('name')
+    const totalAmount = renderTotal()
+    
+    document.getElementById('order-completed').innerHTML = `
+    <div class="ticket" id="ticket">
+        <p>You have paid $${totalAmount}</p>
+        <p>Thank you ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!, Your order is on it's way!</p>
+    </div>
+    `
+    document.getElementById('modal').style.display = 'none'
+    document.getElementById('overlay').style.display = 'none'
+    cart.hidden = true
+    // Render Ticket
+    document.getElementById('ticket').style.display = 'flex'
+    // Remove previous order
+    ordersArray = []
+    renderOrders()
+    // clear form
+    payForm.reset()
+
+    
+    setTimeout(function(){
+        document.getElementById('ticket').style.display = 'none'
+    }, 5000)
+})
+
+
+
 
 
 

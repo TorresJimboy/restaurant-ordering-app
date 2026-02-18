@@ -35,14 +35,16 @@
             </main>
             <div class="overlay" id="overlay"></div>
             <div class="modal" id="modal">
-                <form>
+                <form id="payment-form">
                     <h3 class="form-title">Enter card details</h3>
-                    <input type="text" id="form-name" name="name" placeholder="Full Name" required/>
-                    <input type="text" id="form-card-number" name="card-number" placeholder="Card Number" maxlength="19" inputmode="numeric" required/>
-                    <input type="text" id="form-cvv" name="cvv" placeholder="CVV" maxlength="3" required/>
-                    <button type="submit">Pay</button>
+                    <input type="text" class="form-input" id="form-name" name="name" placeholder="Enter your name" required/>
+                    <input type="text" class="form-input" id="form-card-number" name="card-number" placeholder="Enter card number" maxlength="19" inputmode="numeric" required/>
+                    <input type="text" class="form-input" id="form-cvv" name="cvv" placeholder="Enter CVV" maxlength="3" required/>
+                    <button class="pay-btn" type="submit">Pay</button>
                 </form>
             </div>
+            <div class="order-completed" id="order-completed"></div>
+            <!-- Ticket Here -->
         </div>
 	<script src="index.js" type="module"></script>
     </body>
